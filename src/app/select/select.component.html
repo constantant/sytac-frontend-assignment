@@ -1,0 +1,8 @@
+<label [for]="id">{{label}}</label>
+<div class="box" [ngClass]="isDisabled ? 'disabled' : ''">
+  <span>{{currentValue}}</span>
+  <select [id]="id" #select (change)="onSelect($event.target.value)">
+    <option *ngIf="values && values.length"></option>
+    <option *ngFor="let value of values" [selected]="value === currentValue">{{value}}</option>
+  </select>
+</div>

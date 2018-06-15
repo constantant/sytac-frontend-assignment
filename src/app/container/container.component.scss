@@ -1,0 +1,18 @@
+@import "../../vars";
+
+$border-color: $color-primary;
+$padding-outer: $regular-margin;
+$padding-inner: $special-margin;
+
+:host {
+  display: flex;
+  padding: $padding-outer;
+  background-color: $color-background;
+}
+
+div {
+  position: relative;
+  border: 4px solid $border-color;
+  padding: $padding-inner;
+  flex-grow: 1;
+}

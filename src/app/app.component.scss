@@ -1,0 +1,144 @@
+@import "../vars";
+
+$background-color-app: #df6425;
+$underlain-border-size: 10px;
+
+:host {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: $font-family-app;
+  background-color: $background-color-app;
+  overflow: auto;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: $regular-margin 0;
+  width: 660px;
+}
+
+.header {
+  flex-shrink: 0;
+  margin-bottom: $regular-margin;
+  cursor: pointer;
+  outline: none;
+  &-title {
+    width: 356px;
+    font-family: $font-family-logo;
+    font-size: 60px;
+  }
+  &-text {
+    position: relative;
+    text-shadow: 4px 0 5px #fff;
+  }
+  &-underline {
+    position: relative;
+    border-color: $color-primary transparent transparent transparent;
+    border-width: $underlain-border-size $underlain-border-size 0 $underlain-border-size;
+    border-style: solid;
+    margin-right: -8px;
+    box-shadow: 1px 1px 6px 2px #fff;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      border-color: transparent transparent $color-primary $color-primary;
+      border-width: 0 $underlain-border-size $underlain-border-size $underlain-border-size;
+      border-style: solid;
+
+    }
+  }
+  &-picture {
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    right: 0;
+    width: 237px;
+    height: 140px;
+    background: transparent no-repeat bottom right url("../assets/header-picture.png");
+    background-size: contain;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.form {
+  width: 40%;
+  margin-right: $regular-margin;
+  flex-shrink: 0;
+  &-fields {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: $regular-margin;
+    overflow: auto;
+  }
+}
+
+app-select {
+  margin-bottom: $regular-margin;
+}
+
+.result {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.loading {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100px;
+  margin: 0 0 0 -50px;
+}
+
+.error {
+  color: red;
+}
+
+@media screen and (max-width: 660px) {
+  :host {
+    display: block;
+  }
+  .body {
+    width: auto;
+    height: 100%;
+    padding: 0;
+  }
+  .header {
+    &-title {
+      width: auto;
+      font-size: 13vw;
+      padding: 0 20px 0 0;
+    }
+    &-picture {
+      display: none;
+    }
+  }
+  .content {
+    flex-direction: column;
+  }
+  .form {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: $regular-margin;
+    &-fields {
+      position: relative;
+    }
+  }
+}
+

@@ -1,0 +1,22 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="image">
+    <img *ngIf="data.img; else errorMessage" [src]="data.img" [alt]="data.brand"/>
+    <ng-template #errorMessage>
+      <div class="image-error">Sorry, the image cannot be loaded...</div>
+    </ng-template>
+    <div class="image-vignette" [style.boxShadow]="'inset 0 0 20px 6px ' + (color$ | async)"></div>
+  </div>
+  <div class="colors">
+    <a
+      *ngFor="let color of data.colors"
+      [routerLink]="[ '../', color ]"
+      routerLinkActive="current"
+      [style.backgroundColor]="color"
+    ></a>
+  </div>
+  <ul>
+    <li>#{{data.id}}</li>
+    <li>{{data.type}}</li>
+    <li>{{data.brand}}</li>
+  </ul>
+</ng-container>
