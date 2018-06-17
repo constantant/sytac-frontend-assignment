@@ -137,13 +137,6 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.error')).not.toBeNull();
     expect(compiled.querySelector('.error p').textContent).toContain(errorMessage);
-    const _tick = () => {
-      try {
-        tick();
-      } catch (e) {
-        _tick();
-      }
-    };
-    _tick();
+    tick();
   }));
 });

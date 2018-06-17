@@ -101,7 +101,8 @@ export class AppComponent implements OnInit, OnDestroy {
           brand: '',
           color: ''
         });
-      })
+      }),
+      catchError(() => of().pipe(filter(() => false)))
     ).subscribe(() => {
       this._router.events.pipe(
         filter((event: Event) => event instanceof ActivationEnd)
@@ -122,7 +123,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private _setValues() {
     this.vehicles$ = this.form.valueChanges.pipe(
       switchMap((value: IVehicleForm) => this._dataService.vehicles$.pipe(
-        map((vehicles: IVehicle[]) => [ vehicles, value ])
+        map((vehicles: IVehicle[]) => [ vehicles, value ]),
+        catchError(() => of().pipe(filter(() => false)))
       ))
     ).pipe(
       map(([ vehicles, formValue ]) => {
@@ -149,7 +151,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.brands$ = this.form.valueChanges.pipe(
       switchMap((value: IVehicleForm) => this._dataService.vehicles$.pipe(
-        map((vehicles: IVehicle[]) => [ vehicles, value ])
+        map((vehicles: IVehicle[]) => [ vehicles, value ]),
+        catchError(() => of().pipe(filter(() => false)))
       ))
     ).pipe(
       map(([ vehicles, formValue ]) => {
@@ -172,7 +175,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.colors$ = this.form.valueChanges.pipe(
       switchMap((value: IVehicleForm) => this._dataService.vehicles$.pipe(
-        map((vehicles: IVehicle[]) => [ vehicles, value ])
+        map((vehicles: IVehicle[]) => [ vehicles, value ]),
+        catchError(() => of().pipe(filter(() => false)))
       ))
     ).pipe(
       switchMap(([ vehicles, formValue ]) => {
