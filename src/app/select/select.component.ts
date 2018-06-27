@@ -15,6 +15,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class SelectComponent implements ControlValueAccessor {
 
+  private static _id = 0;
+
   id: string;
   currentValue: string;
   isDisabled: boolean;
@@ -28,22 +30,21 @@ export class SelectComponent implements ControlValueAccessor {
   @ViewChild('select')
   select: ElementRef;
 
-  private static _id = 0;
 
   private _onChange = (value: string) => {
-  };
+  }
 
   private _onTouched = (value: string) => {
-  };
+  }
 
   constructor(private _renderer: Renderer2) {
-    this.id = `app-select-${++SelectComponent._id}`
+    this.id = `app-select-${++SelectComponent._id}`;
   }
 
   onSelect(value: string) {
     this.currentValue = value;
     this._onChange(value);
-    this._onTouched(value)
+    this._onTouched(value);
   }
 
   writeValue(value: string): void {
@@ -52,7 +53,7 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   registerOnChange(fn: () => void): void {
-    this._onChange = fn
+    this._onChange = fn;
   }
 
   registerOnTouched(fn: () => void): void {

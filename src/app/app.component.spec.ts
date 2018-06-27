@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DataService } from './shared/data.service';
 import { DataServiceStub } from '../testing/data-service-stub';
 import { RouterStub } from '../testing/router-stub';
-import { SelectComponentStub } from '../testing/select-component-stub';
+import { SelectStubComponent } from '../testing/select-component-stub';
 import { throwError } from 'rxjs/internal/observable/throwError';
 
 describe('AppComponent', () => {
@@ -20,7 +20,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        SelectComponentStub
+        SelectStubComponent
       ],
       imports: [
         ReactiveFormsModule

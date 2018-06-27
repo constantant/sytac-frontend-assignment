@@ -7,12 +7,12 @@ import { Component, forwardRef } from '@angular/core';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SelectComponentStub),
+      useExisting: forwardRef(() => SelectStubComponent),
       multi: true
     }
   ]
 })
-export class SelectComponentStub implements ControlValueAccessor {
+export class SelectStubComponent implements ControlValueAccessor {
   writeValue(value: string): void {
   }
 

@@ -8,6 +8,7 @@ describe('workspace-project Vehicle', () => {
 
   beforeEach(() => {
     page = new VehiclePage();
+    pageApp = new AppPage();
   });
 
   it('should display Amer 4-4-0 page', () => {

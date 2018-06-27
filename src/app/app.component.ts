@@ -170,7 +170,7 @@ export class AppComponent implements OnInit, OnDestroy {
             }
             return hasColor && hasVehicle;
           })
-          .map((vehicle: IVehicle) => vehicle.brand);
+          .map((_vehicle: IVehicle) => _vehicle.brand);
       })
     );
 
@@ -194,7 +194,7 @@ export class AppComponent implements OnInit, OnDestroy {
             }
             return hasVehicle && hasBrand;
           })
-          .map((vehicle: IVehicle) => vehicle.colors);
+          .map((_vehicle: IVehicle) => _vehicle.colors);
         const _list = [];
         return of([].concat(...colors).filter((color: string) => {
           const hasColor = _list.indexOf(color) !== -1;

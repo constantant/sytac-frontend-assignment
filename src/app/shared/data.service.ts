@@ -69,6 +69,6 @@ export class DataService {
         return vehicle$;
       }),
       take(1)
-    )
+    );
   }
 }

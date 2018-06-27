@@ -10,14 +10,17 @@ export class DataServiceStub {
         type: 'car',
         brand: 'Bugatti Veyron',
         colors: [ 'red', 'black' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%' +
+        '29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5' +
+        '._April_2012%2C_D%C3%BCsseldorf.jpg'
       },
       {
         id: 2,
         type: 'airplane',
         brand: 'Boeing 787 Dreamliner',
         colors: [ 'red', 'white', 'black', 'green' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/All_Nippon_Airways_Boeing_787-8_Dreamliner_JA801A_OKJ_in_flight.jpg/600px-All_Nippon_Airways_Boeing_787-8_Dreamliner_JA801A_OKJ_in_flight.jpg'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/All_Nippon_Airways_Boeing_787-8_Dreamliner_JA801' +
+        'A_OKJ_in_flight.jpg/600px-All_Nippon_Airways_Boeing_787-8_Dreamliner_JA801A_OKJ_in_flight.jpg'
       },
       {
         id: 3,
@@ -31,7 +34,8 @@ export class DataServiceStub {
         type: 'airplane',
         brand: 'Canadair North Star',
         colors: [ 'red', 'blue', 'yellow', 'green' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/BOAC_C-4_Argonaut_Heathrow_1954.jpg/600px-BOAC_C-4_Argonaut_Heathrow_1954.jpg'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/BOAC_C-4_Argonaut_Heathrow_1954.jpg/600px-B' +
+        'OAC_C-4_Argonaut_Heathrow_1954.jpg'
       },
       {
         id: 5,
@@ -59,7 +63,8 @@ export class DataServiceStub {
         type: 'train',
         brand: 'EMD GP40',
         colors: [ 'black', 'grey', 'white' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/EMD_GP40_B%26M_339_Wells_Maine.jpg/600px-EMD_GP40_B%26M_339_Wells_Maine.jpg'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/EMD_GP40_B%26M_339_Wells_Maine.jpg/600px-EMD' +
+        '_GP40_B%26M_339_Wells_Maine.jpg'
       },
       {
         id: 9,
@@ -80,20 +85,22 @@ export class DataServiceStub {
         type: 'car',
         brand: 'Lamborghini Huracán',
         colors: [ 'black', 'white' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-03-04_Geneva_Motor_Show_1379.JPG/440px-2014-03-04_Geneva_Motor_Show_1379.JPG'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-03-04_Geneva_Motor_Show_1379.JPG' +
+        '/440px-2014-03-04_Geneva_Motor_Show_1379.JPG'
       },
       {
         id: 12,
         type: 'car',
         brand: 'Porsche Carrera GT',
         colors: [ 'green', 'yellow' ],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_%28July_2008%29.jpg/440px-Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_%28July_2008%29.jpg'
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Porsche_Carrera_GT_-_Goodwood_Breakfast_Cl' +
+        'ub_%28July_2008%29.jpg/440px-Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_%28July_2008%29.jpg'
       }
     ]);
   }
 
   fetchData(): Observable<IVehicle[]> {
-    return this.vehicles$
+    return this.vehicles$;
   }
 
   getVehicle(vehicle: string, brand: string, color: string): Observable<IVehicle> {
@@ -102,7 +109,9 @@ export class DataServiceStub {
       type: 'car',
       brand: 'Bugatti Veyron',
       colors: [ 'red', 'black' ],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg'
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%28' +
+      '1%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%' +
+      '2C_5._April_2012%2C_D%C3%BCsseldorf.jpg'
     });
   }
 

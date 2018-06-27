@@ -4,7 +4,7 @@ import { of } from 'rxjs/internal/observable/of';
 export class RouterStub {
   get events() {
     return of(this._activationEnd);
-  };
+  }
 
   private _activationEnd: ActivationEnd;
 

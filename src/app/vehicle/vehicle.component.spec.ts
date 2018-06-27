@@ -1,4 +1,4 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActivatedRouteStub } from '../../testing/activated-route-stub';
 import { VehicleComponent } from './vehicle.component';
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 describe('VehicleComponent', () => {
   let component: VehicleComponent;
   let fixture: ComponentFixture<VehicleComponent>;
-  let activatedRouteStub = new ActivatedRouteStub();
+  const activatedRouteStub = new ActivatedRouteStub();
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ VehicleComponent ],
@@ -18,13 +18,17 @@ describe('VehicleComponent', () => {
       schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
     activatedRouteStub.setParams({ color: 'black' });
-    activatedRouteStub.setData({ vehicle: {
+    activatedRouteStub.setData({
+      vehicle: {
         id: 1,
         type: 'car',
         brand: 'Bugatti Veyron',
-        colors: ['red', 'black'],
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg'
-      } });
+        colors: [ 'red', 'black' ],
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%28' +
+        '1%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg/520px-Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._' +
+        'April_2012%2C_D%C3%BCsseldorf.jpg'
+      }
+    });
   }));
 
   beforeEach(async(() => {

@@ -34,7 +34,7 @@ describe('workspace-project App', () => {
             }).catch(() => {
               expect(page.getErrorMessage()).not.toBeNull();
             });
-          })
+          });
       })
       .catch(() => {
         expect(page.getErrorMessage()).not.toBeNull();

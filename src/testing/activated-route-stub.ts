@@ -18,13 +18,13 @@ export class ActivatedRouteStub {
 
   setParamMap(params?: Params) {
     this._subjectParamMap$.next(convertToParamMap(params));
-  };
+  }
 
   setParams(params?: Params) {
     this._subjectParams$.next(params);
-  };
+  }
 
   setData(data: Data) {
     this._subjectData$.next(data);
-  };
+  }
 }

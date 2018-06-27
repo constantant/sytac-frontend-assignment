@@ -7,5 +7,5 @@ interface IVehicle {
   type: string;
   brand: string;
   colors: string[];
-  img: string;
+  img: null | string;
 }
